@@ -1,0 +1,12 @@
+Сорзаём сервис: /etc/systemd/system/network-reconnect.service (chmod 664)
+
+[Unit]
+Description=Network Restart
+After=network.target
+Recuires=network.target
+[Service]
+Type=oneshot
+User=root
+ExecStart=/etc/network/ip_reconnect.sh
+[Install]
+WantedBy=multi-user.target
